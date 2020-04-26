@@ -1,0 +1,179 @@
+docker build -t fideriajt/chatbot:nust .
+
+find / -name "*work.so"
+
+https://linuxize.com/post/how-to-remove-docker-images-containers-volumes-and-networks/
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+https://genieframework.github.io/Genie.jl/documentation/16--Using_Genie_With_Docker.html
+
+
+docker build -t chatbot:nust .
+
+docker run -t -d -p 8000:8000 --name mybot chatbot:nust
+
+
+docker run -t -d -p 8000:80 --name mybot chatbot:nust
+
+docker ps -a
+
+docker start mybot
+
+docker exec -it mybot bash
+
+
+
+
+
+
+
+
+
+pip install tensorflow==1.8.0rc0
+
+docker pull centos/python-36-centos7
+
+docker run -i -t chatbot:nust bash
+
+docker run --rm -i -t chatbot:nust bash
+
+/julia-1.4.1/bin/julia start.jl
+
+
+
+
+
+-d : is to run the container in the background
+-p : is to publish the Port 80 of the container to the 8080 port of the host so that we can access the website in our host browser( in my case MAC) so the URL
+
+
+docker run -d -p 8000:8000 --name bot chatbot:nust
+docker run -it chatbot:nust bash
+docker exec -it b8abcb68d209  bash
+
+
+docker run -t -d --name bot chatbot:nust
+
+cp /chatbot:/home
+
+
+docker run -it chatbot:nust bash
+
+
+docker run -v /chatbot:/home --name b8abcb68d209 chatbot:nust
+
+
+docker cp c:\path\to\local\file chatbot:/path/to/target/dir/
+
+docker run -v /path/to/hostdir:/mnt --name my_container my_image
+
+docker exec -i b8abcb68d209 sh -c 'cat > ./bar/foo.txt' < ./foo.txt
+---------------------------
+
+sudo apt-get update
+sudo apt-get install julia
+
+/julia-1.4.1/bin/julia
+
+
+
+wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz
+
+tar xf julia-1.4.1-linux-x86_64.tar.gz
+
+sudo ln -s ~/julia-1.4.1/bin/julia /bin/julia
+
+
+
+/home/julia-1.4.1/bin/julia start.jl
+
+
+
+----------------------------------
+FROM python:3
+
+EXPOSE 8000
+
+#WORKDIR /usr/src/app
+
+RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz
+RUN tar xf julia-1.4.1-linux-x86_64.tar.gz
+
+RUN pip install nltk
+
+using Genie.Router, Genie
+using JSON, PyCall
+using Genie.Deploy
+
+COPY . .
+
+CMD [ "/home/julia-1.4.1/bin/julia", "start.jl"]
+----------------------------------
+
+FROM python:3
+
+EXPOSE 8000
+
+#WORKDIR /usr/src/app
+
+#COPY requirements.txt ./
+#RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [ "python"]
+
+-----------------------------------------
+FROM julia:latest
+# user
+RUN useradd --create-home --shell /bin/bash genie
+# app
+RUN mkdir /home/genie/app
+COPY . /home/genie/app
+WORKDIR /home/genie/app
+RUN chown genie:genie -R *
+RUN chmod +x bin/repl
+RUN chmod +x bin/server
+RUN chmod +x bin/serverinteractive
+USER genie
+RUN julia -e "using Pkg; pkg\"activate . \"; pkg\"instantiate\"; pkg\"precompile\"; "
+# ports
+EXPOSE 8000
+EXPOSE 80
+ENV JULIA_DEPOT_PATH "/home/genie/.julia"
+ENV GENIE_ENV "dev"
+CMD ["bin/server"]
+
+-----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+yum clean all
+yum -y install epel-release
+yum -y update
+python --version
+yum-config-manager --add-repo https://copr.fedorainfracloud.org/coprs/nalimilan/julia/repo/epel-7/nalimilan-julia-epel-7.repo
+yum install julia
+yum upgrade julia
+
+
+julia
+
+using Pkg
+Pkg.add("TensorFlow")
+Pkg.add("PyCall"); 
+
+Pkg.build("PyCall"); 
+Pkg.build("TensorFlow")
