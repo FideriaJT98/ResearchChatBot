@@ -2,17 +2,22 @@
 A julia chatbot with tensorflow and web scraping
 
 ## Prerequisites
+- Access to this repository on GitHub.
 
-- Ability to `ssh` into a remote machine.
-- An IP for a remote machine (this should have been given to you at the beginning of the workshop).
-- Access to this repository on GitHub (we will clone it later on the remote machine).
-
-## 1. Prepare a Julia program and Docker image for model training
+### Get Repo
 Clone this Github repo on the dev machine as follows:
 
 ```
 $ git clone https://github.com/FideriaJT98/ResearchChatBot.git
 ```
+
+You should now see a folder containing the contents of this repo:
+```
+ls
+$ git DockerFile start.jl
+```
+This Dockerfile tells Docker how to build a Docker "image" for our chatbot
+
 
 ### Docker build and run
 ```
