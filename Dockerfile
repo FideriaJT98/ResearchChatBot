@@ -17,7 +17,7 @@ RUN tar xf julia-1.4.1-linux-x86_64.tar.gz
 RUN pwd 
 RUN /tf/julia-1.4.1/bin/julia --version                                                             
 
-RUN /tf/julia-1.4.1/bin/julia -e "using Pkg; Pkg.add(\"IJulia\"); Pkg.add(\"Genie\"); Pkg.add(\"PyCall\"); Pkg.add(\"JSON\"); Pkg.add(\"TensorFlow\"); "    
+RUN /tf/julia-1.4.1/bin/julia -e "using Pkg; Pkg.add(\"IJulia\"); Pkg.add(\"Genie\"); Pkg.add(\"PyCall\"); Pkg.add(\"JSON\"); Pkg.add(\"TensorFlow\"); Pkg.add(\"TextAnalysis\"); Pkg.build(\"TextAnalysis\"); "    
 
 #-------------------------------------------------------------------------------------------------
 

@@ -25,18 +25,22 @@ $docker build -t chatbot:nust .
 ```
 
 ### Docker run container
--d : is to run the container in the background
-First -p : is to publish the Port 80 of the container to the 8000 port of the host so that we can access the chatbot website in 
-our host browser on http://127.0.0.1:8000/
-Second -p : is to publish Jupyter Notebook
-```
-$docker run -it -d -p 8000:80 -p 8888:8888 --name mybot chatbot:nust
-```
 
-Temp run, without saving container
+Temp run, removes the container after
 ```
 $docker run -it --rm -p 8888:8888 -p 8000:80 chatbot:nust
 ```
+This will fire up your Jupyter notebook using the final command in the Dockerfile to http://127.0.0.1:8888/
+
+
+Permanently Run, Keeps container
+```
+$docker run -it -d -p 8000:80 -p 8888:8888 --name mybot chatbot:nust
+```
+-d : is to run the container in the background
+This will fire up your Jupyter notebook using the final command in the Dockerfile to http://127.0.0.1:8888/
+
+
 
 ## Resources
 
