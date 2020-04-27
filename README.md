@@ -38,3 +38,10 @@ Temp run, without saving container
 $docker run -it --rm -p 8888:8888 -p 8000:80 chatbot:nust
 ```
 
+## Resources
+
+Docker
+
+- [Install Docker](https://docs.docker.com/engine/installation/) locally.
+- Check out the [Docker docs](https://docs.docker.com/).
+
