@@ -16,7 +16,7 @@ You should now see a folder containing the contents of this repo:
 ls
 $ git DockerFile start.jl
 ```
-This Dockerfile tells Docker how to build a Docker "image" for our chatbot
+This Dockerfile file compile with reference to https://www.tensorflow.org/install/source
 
 
 ### Docker build and run
