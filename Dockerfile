@@ -8,7 +8,7 @@ COPY . .
 #-------------------------------------------------------------------------------------------------
 #Install Julia and NLTK
 RUN pip install nltk
-RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz   # or download it myself and copy it to container
+RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz   
 RUN tar xf julia-1.4.1-linux-x86_64.tar.gz
 RUN /julia-1.4.1/bin/julia --version                                                            # unnecesary to change location of julia
 

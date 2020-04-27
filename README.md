@@ -16,7 +16,7 @@ You should now see a folder containing the contents of this repo:
 ls
 $ git DockerFile start.jl
 ```
-This Dockerfile file compile with reference to https://www.tensorflow.org/install/source
+This Dockerfile file compile with reference to https://www.tensorflow.org/install/source#docker_linux_builds
 
 
 ### Docker build and run
