@@ -17,7 +17,7 @@ $ls
 DockerFile start.jl
 ```
 This Dockerfile file compile with reference to https://www.tensorflow.org/install/source#docker_linux_builds
-
+Currently using a Jupyter Notebook Tensorflow image for testing, will change to devel image later
 
 ### Docker build and run
 ```
@@ -26,8 +26,9 @@ $docker build -t chatbot:nust .
 
 ### Docker run container
 -d : is to run the container in the background
--p : is to publish the Port 80 of the container to the 8080 port of the host so that we can access the website in our host browser
+First -p : is to publish the Port 80 of the container to the 8000 port of the host so that we can access the chatbot website in 
+our host browser on http://127.0.0.1:8000/
+Second -p : is to publish Jupyter Notebook
 ```
-$docker run -it -d -p 8888:8888 --name mybot chatbot:nust
-$docker run -t -d -p 8000:80 --name mybot chatbot:nust
+$docker run -it -d -p 8000:80 -p 8888:8888 --name mybot chatbot:nust
 ```

@@ -20,6 +20,7 @@ using Pkg
 Pkg.add("Genie")
 Pkg.add("PyCall")
 Pkg.add("JSON")
+Pkg.add("TensorFlow")
 
 println("1.5")
 
@@ -27,6 +28,7 @@ using Genie
 using Genie.Router
 using Genie.Deploy
 using JSON, PyCall
+using TensorFlow
 
 #=
 using HTTP, Gumbo, Cascadia, Genie
