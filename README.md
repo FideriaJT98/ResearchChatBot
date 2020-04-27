@@ -32,3 +32,9 @@ Second -p : is to publish Jupyter Notebook
 ```
 $docker run -it -d -p 8000:80 -p 8888:8888 --name mybot chatbot:nust
 ```
+
+Temp run, without saving container
+```
+$docker run -it --rm -p 8888:8888 -p 8000:80 chatbot:nust
+```
+
