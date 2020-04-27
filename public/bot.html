@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat Bot</title>
+      <meta name=viewport content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/png" href="http://ashwinshenoy.com/img/favicon.png">
+      <!-- CSS -->
+      
+	  <link href="/css/genie/font-awesome.min.css" rel="stylesheet">
+	  <link href="/css/genie/style.css" rel="stylesheet" />
+	  
+	  
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+
+      <div class="container">
+
+        <div class="text-center hd1">
+          <img src="/img/genie/bot1.png" alt="bot1">
+          <br>
+          A Simple Chat Bot
+          <br>
+          <div class="powered">
+            <span>Powered by</span>
+            <a href="https://www.nust.na" target="_blank">
+              NUST
+            </a>
+          </div><!--powered end-->
+          <div class="footer text-center">
+          </div>
+        </div>
+  
+        <mybot>
+
+            <div class="chatCont" id="chatCont">  
+                    <div class="bot_profile">  
+                        <img src="/img/genie/bot2.png" class="bot_p_img">  
+                        <div class="close">  
+                            <i class="fa fa-times" aria-hidden="true"></i>  
+                        </div>  
+                    </div><!--bot_profile end-->  
+                    <div id="result_div" class="resultDiv"></div>  
+                    <div class="chatForm" id="chat-div">  
+                        <div class="spinner">  
+                            <div class="bounce1"></div>  
+                            <div class="bounce2"></div>  
+                            <div class="bounce3"></div>  
+                        </div>  
+                        <input type="text" id="chat-input" autocomplete="off" placeholder="Try typing here"    class="form-control bot-txt"/> 
+                    </div>  
+            </div><!--chatCont end-->  
+
+            <div class="profile_div">  
+                <div class="row">  
+                    <div class="col-hgt">  
+                        <img src="/img/genie/bot2.png" class="img-circle img-profile">  
+                    </div><!--col-hgt end-->  
+                    <div class="col-hgt">  
+                        <div class="chat-txt">  
+                            Chat with us now!  
+                        </div>  
+                    </div><!--col-hgt end-->  
+                </div><!--row end-->  
+            </div><!--profile_div end-->
+        </mybot>
+  
+      </div><!--container end-->
+    
+    <!--JS-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	  <script src="/js/genie/jquery.min.js"></script>
+	  <script src="/js/genie/bootstrap.min.js"></script>-->
+	  <script src="/js/genie/pixi.min.js"></script>
+    <script type="text/javascript" src="/js/genie/jquery.min.js"></script>
+	  <script src="/js/genie/E.js"></script>
+    </body>
+</html>
