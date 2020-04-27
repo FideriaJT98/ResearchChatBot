@@ -1,4 +1,5 @@
-FROM tensorflow/tensorflow:devel
+#FROM tensorflow/tensorflow:devel               #for development
+FROM tensorflow/tensorflow:nightly-py3-jupyter  #for testing for now, in Jupyter Notebook 
 
 EXPOSE 8000
 EXPOSE 80
@@ -6,26 +7,16 @@ EXPOSE 80
 COPY . .
 
 #-------------------------------------------------------------------------------------------------
+
 #Install Julia and NLTK
 RUN pip install nltk
+RUN apt-get install wget                                                                        #An ubuntu image
 RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz   
 RUN tar xf julia-1.4.1-linux-x86_64.tar.gz
-RUN /julia-1.4.1/bin/julia --version                                                            # unnecesary to change location of julia
+RUN /julia-1.4.1/bin/julia --version                                                            # proved difficult to change the location 
 
+RUN julia -e "using Pkg; pkg.add(\"IJulia"); "                                               
+ 
 #-------------------------------------------------------------------------------------------------
-RUN ./configure  # answer prompts or use defaults
-RUN bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
-RUN ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /mnt               # create package
-RUN chown $HOST_PERMS /mnt/tensorflow-version-tags.whl
-chown $HOST_PERMS /mnt/tensorflow-version-tags.whl
 
-#-------------------------------------------------------------------------------------------------
-#Install and verify the package within the container:
-RUN pip uninstall tensorflow # remove current version
-RUN pip install /mnt/tensorflow-version-tags.whl
-RUN cd /tmp  # don't import from source directory
-RUN python -c "import tensorflow as tf; print(tf.__version__)"
-
-#-------------------------------------------------------------------------------------------------
-#Start our ChatBot
-CMD [ "/julia-1.4.1/bin/julia", "start.jl"]
+CMD ["bash"]
