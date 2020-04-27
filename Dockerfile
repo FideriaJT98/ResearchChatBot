@@ -1,4 +1,4 @@
-#for testing for now, in Jupyter Notebook 
+# for testing for now, in Jupyter Notebook 
 FROM tensorflow/tensorflow:nightly-py3-jupyter  
 
 EXPOSE 8000
@@ -9,10 +9,10 @@ COPY . .
 
 #-------------------------------------------------------------------------------------------------
 
-#Install Julia and NLTK
+# Install Julia and NLTK
 RUN pip install nltk
 #RUN apt-get install wget                                                                        
-#RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz   
+# RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz   
 RUN tar xf julia-1.4.1-linux-x86_64.tar.gz
 RUN pwd 
 RUN /tf/julia-1.4.1/bin/julia --version                                                             
@@ -22,4 +22,5 @@ RUN /tf/julia-1.4.1/bin/julia -e "using Pkg; Pkg.add(\"IJulia\"); Pkg.add(\"Geni
 #-------------------------------------------------------------------------------------------------
 
 # CMD ["bash"]
-CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+# CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+CMD ["/tf/julia-1.4.1/bin/julia", "start.jl"]

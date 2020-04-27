@@ -19,7 +19,7 @@ using Genie
 using Genie.Router
 using Genie.Deploy
 using JSON, PyCall
-using TensorFlow
+#using TensorFlow
 
 #=
 using HTTP, Gumbo, Cascadia, Genie
