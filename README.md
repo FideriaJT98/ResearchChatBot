@@ -48,4 +48,3 @@ Docker
 
 - [Install Docker](https://docs.docker.com/engine/installation/) locally.
 - Check out the [Docker docs](https://docs.docker.com/).
-
