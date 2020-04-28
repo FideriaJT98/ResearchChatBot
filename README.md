@@ -49,5 +49,5 @@ Docker
 - [Install Docker](https://docs.docker.com/engine/installation/) locally.
 - Check out the [Docker docs](https://docs.docker.com/).
 
-| [Tensorlow](images/tensoflow.png) | images/tensoflow.png |
+|<img width="1604" src="images/tensoflow.png">| <img width="1604" src="images/tensoflow.png"> |
 
