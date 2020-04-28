@@ -117,9 +117,10 @@ route("/pass_val", method=POST, named = :randommap) do
     "$res"
 end
 
-println("ALMOST THERE")
+println("ALMOST THERE--")
 
-#up()
+up()
 
-Deploy.Docker.build()
-Deploy.Docker.run()
+#Deploy.Docker.dockerfile()
+#Deploy.Docker.build()
+#Deploy.Docker.run(mountapp = true)

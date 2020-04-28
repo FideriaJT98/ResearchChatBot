@@ -23,4 +23,7 @@ RUN /tf/julia-1.4.1/bin/julia -e "using Pkg; Pkg.add(\"IJulia\"); Pkg.add(\"Geni
 
 # CMD ["bash"]
 # CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
+
+RUN mv Dockerfile Dockerfile_original
+
 CMD ["/tf/julia-1.4.1/bin/julia", "start.jl"]
