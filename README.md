@@ -48,6 +48,3 @@ Docker
 
 - [Install Docker](https://docs.docker.com/engine/installation/) locally.
 - Check out the [Docker docs](https://docs.docker.com/).
-
-<img width="1604" src="images/tensoflow.png">
-
