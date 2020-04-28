@@ -1,6 +1,8 @@
 # ResearchChatBot
 A julia chatbot with tensorflow and web scraping
 
+![SNAPSHOT](images/screenshot.png)
+
 ## Prerequisites
 - Access to this repository on GitHub.
 
